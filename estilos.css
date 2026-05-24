@@ -1,0 +1,421 @@
+/* ==========================================================================
+   Estilos Generales y Reseteo
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #181717;
+}
+
+/* ==========================================================================
+   Maquetación General con Flexbox (Encabezado y Navegación)
+   ========================================================================== */
+header {
+  background-color: #e603a1;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* Menú estructurado con Flexbox */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto Hover Creativo */
+nav ul li a:hover {
+  background-color: #ae2791;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+nav ul li a.active {
+  background-color: #e67e22;
+}
+
+/* ==========================================================================
+   Cuerpo de Contenido Principal
+   ========================================================================== */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.introduccion {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   Diseño de Tarjetas con CSS Grid (Página de Inicio)
+   ========================================================================== */
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.tarjeta {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 1.5rem;
+
+  /* Preparación para la animación */
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tarjeta h3 {
+  margin: 1rem 0;
+  color: #2c3e50;
+}
+
+.tarjeta p {
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.boton-enlace {
+  display: inline-block;
+  background-color: #b62594d1;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.boton-enlace:hover {
+  background-color: #db34b4;
+}
+
+/* Animación Básica solicitada en Tarjetas */
+.tarjeta:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Estilos de Secciones de Contenido (Páginas Internas)
+   ========================================================================== */
+.anclas-nav {
+  margin-bottom: 1.5rem;
+  background: #ebf5fb;
+  padding: 10px;
+  border-left: 5px solid #b929ad;
+}
+
+.seccion-contenido {
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-subir {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.boton-subir {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Estilos del Formulario
+   ========================================================================== */
+.contenedor-formulario {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.formulario-contacto .grupo-campo {
+  margin-bottom: 1.2rem;
+}
+
+.formulario-contacto label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Validación nativa visual a través de CSS */
+.formulario-contacto input:focus:invalid,
+.formulario-contacto select:focus:invalid {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.formulario-contacto input:valid,
+.formulario-contacto select:valid,
+.formulario-contacto textarea:valid {
+  border-color: #2ecc71;
+}
+
+.boton-enviar {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.boton-enviar:hover {
+  background-color: #219a52;
+}
+
+/* ==========================================================================
+   Pie de Página con Flexbox
+   ========================================================================== */
+footer {
+  background-color: #e00e6c;
+  color: #fff;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.redes a {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+
+.redes a:hover {
+  color: #fff;
+}
+
+/* Diseño Adaptativo Básico */
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   ========================================== */
+:root {
+  --color-primario: #f10492;
+  --color-secundario: #27ae60;
+  --color-fondo: #f4f7f6;
+  --color-texto: #333333;
+  --color-blanco: #ffffff;
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+header {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--color-secundario);
+}
+
+/* ==========================================
+   4. ANIMACIONES Y EFECTOS EN TARJETAS
+   ========================================== */
+
+/* 1. Animación automática: Flotación suave para las tarjetas */
+.tarjeta {
+  background-color: var(--color-blanco);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative; /* Obligatorio para el brillo */
+
+  /* Aplicamos la animación infinita de flotar */
+  animation: flotar 4s ease-in-out infinite;
+}
+
+/* Hacemos que la segunda tarjeta lleve un ritmo diferente para que se vea más natural */
+.tarjeta:nth-child(2) {
+  animation-delay: 2s;
+}
+
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Sube 10 píxeles */
+  }
+}
+
+/* 2. Efecto en la Imagen: Zoom y rotación sutil al pasar el mouse */
+.tarjeta img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease; /* Transición suave para el movimiento */
+}
+
+.tarjeta:hover img {
+  transform: scale(1.1) rotate(1deg); /* Agranda la imagen y la gira un poquito */
+}
+
+/* 3. El Brillo Animado que cruza la tarjeta */
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 2; /* Se asegura de estar por encima de la imagen */
+}
+
+/* El brillo se activa al pasar el mouse */
+.tarjeta:hover::before {
+  animation: destelloBrillante 0.8s ease-in-out;
+}
+
+@keyframes destelloBrillante {
+  100% {
+    left: 150%;
+  }
+}
+
+/* Elementos de texto de la tarjeta */
+.tarjeta h3 {
+  color: var(--color-primario);
+  padding: 1rem 1rem 0 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.tarjeta p {
+  padding: 0.5rem 1rem 1.5rem 1rem;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 3;
+}
+
+.boton-enlace {
+  display: block;
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  position: relative;
+  z-index: 3;
+}
+
+.boton-enlace:hover {
+  background-color: #219150;
+}
